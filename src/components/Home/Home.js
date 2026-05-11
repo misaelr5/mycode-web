@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
@@ -32,12 +31,22 @@ function Home() {
             </Col>
 
             <Col md={5} style={{ paddingBottom: 20 }}>
-              <img
-                src={homeLogo}
-                alt="MyCode web studio"
-                className="img-fluid"
-                style={{ maxHeight: "450px" }}
-              />
+              <div className="hero-brand-panel" aria-label="MyCode Web Studio visual">
+                <div className="hero-panel-top">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div className="hero-panel-body">
+                  <p className="hero-panel-kicker">MyCode Web Studio</p>
+                  <h2>Diseno, estructura y criterio tecnico.</h2>
+                  <div className="hero-panel-lines">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+              </div>
             </Col>
           </Row>
         </Container>

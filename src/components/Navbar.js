@@ -30,7 +30,10 @@ function NavBar() {
     <Navbar expanded={expand} fixed="top" expand="md" className={navColour ? "sticky" : "navbar"}>
       <Container>
         <Navbar.Brand as={Link} to="/" className="d-flex">
-          <span className="brand-text">MyCode</span>
+          <span className="brand-lockup" aria-label="MyCode Web Studio">
+            <span className="brand-text">MyCode</span>
+            <span className="brand-subtitle">Web Studio</span>
+          </span>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
