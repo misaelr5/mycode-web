@@ -1025,11 +1025,11 @@ html {
 }
 
 .stack-preview-panel {
-  background: var(--color-dark-gray);
-  border: 1px solid var(--border-soft);
-  border-radius: 8px;
-  max-width: 380px;
-  padding: 22px;
+  background: #0e2528;
+  border: 1px solid rgba(232, 232, 232, 0.1);
+  border-radius: 12px;
+  max-width: 420px;
+  padding: 18px;
   text-align: left;
   width: 100%;
 }
@@ -1063,16 +1063,78 @@ html {
 
 .stack-preview-panel h2 {
   color: var(--color-white);
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   font-weight: 700;
   line-height: 1.35;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
-.stack-chip-grid {
-  display: flex;
-  flex-wrap: wrap;
+.skill-bento-grid {
+  display: grid;
   gap: 8px;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.skill-bento-separator {
+  background: #2a3a3a;
+  height: 1px;
+  margin: 16px 2px;
+  opacity: 0.85;
+}
+
+.skill-bento-card {
+  align-items: center;
+  background: #1a3a3a;
+  border: 1px solid rgba(232, 232, 232, 0.08);
+  border-radius: 10px;
+  display: flex;
+  gap: 8px;
+  min-height: 58px;
+  padding: 9px;
+  transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.skill-bento-card.is-platform {
+  background: #12242a;
+}
+
+.skill-bento-card:hover {
+  border-color: rgba(132, 169, 201, 0.62);
+  transform: translateY(-2px);
+}
+
+.skill-icon-svg {
+  flex: 0 0 30px;
+  height: 30px;
+  width: 30px;
+}
+
+.skill-icon-svg rect {
+  fill: rgba(132, 169, 201, 0.12);
+  stroke: rgba(132, 169, 201, 0.45);
+}
+
+.skill-icon-svg text {
+  dominant-baseline: middle;
+  fill: #84d8e8;
+  font-family: var(--font-main);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.skill-bento-card h3 {
+  color: var(--color-white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 3px;
+}
+
+.skill-bento-card p {
+  color: rgba(232, 232, 232, 0.58);
+  font-size: 0.58rem;
+  line-height: 1.2;
+  margin: 0;
 }
 
 .stack-chip,
@@ -1088,9 +1150,9 @@ html {
 
 .panel-caption {
   color: rgba(232, 232, 232, 0.62);
-  font-size: 0.82rem;
+  font-size: 0.74rem;
   line-height: 1.6;
-  margin: 22px 0 0;
+  margin: 16px 0 0;
 }
 
 .landing-two-col {

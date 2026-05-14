@@ -3,18 +3,50 @@ import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
 import Type from "./Type";
 
-const stackItems = [
-  "React",
-  "Next.js",
-  "Node",
-  "APIs",
-  "Auth",
-  "DB",
-  "Vercel",
-  "Analytics",
-  "Automations",
-  "Dashboards",
+const developmentSkills = [
+  { title: "Python", subtitle: "Automatizacion y backend", icon: "{}", span: 3 },
+  { title: "TypeScript", subtitle: "Tipado estatico", icon: "TS", span: 3 },
+  { title: "PHP", subtitle: "Backend development", icon: "</>", span: 3 },
+  { title: "React", subtitle: "UI Library", icon: "⚛", span: 3 },
+  { title: "HTML", subtitle: "Estructura web", icon: "<>", span: 2 },
+  { title: "CSS", subtitle: "Estilos y diseno", icon: "#", span: 2 },
+  { title: "Laravel", subtitle: "Framework PHP", icon: "L", span: 2 },
 ];
+
+const platformSkills = [
+  { title: "WordPress", subtitle: "CMS principal", icon: "W", span: 3 },
+  { title: "WooCommerce", subtitle: "E-commerce WordPress", icon: "⌂", span: 3 },
+  { title: "Prestashop", subtitle: "Tiendas online", icon: "P", span: 3 },
+  { title: "Shopify", subtitle: "E-commerce SaaS", icon: "▢", span: 3 },
+  { title: "Wix", subtitle: "Web builder", icon: "W", span: 3 },
+  { title: "Tailwind", subtitle: "CSS utility-first", icon: "≈", span: 3 },
+];
+
+function SkillIcon({ label }) {
+  return (
+    <svg className="skill-icon-svg" viewBox="0 0 40 40" aria-hidden="true">
+      <rect x="5" y="5" width="30" height="30" rx="9" />
+      <text x="20" y="24" textAnchor="middle">
+        {label}
+      </text>
+    </svg>
+  );
+}
+
+function SkillCard({ skill, group }) {
+  return (
+    <article
+      className={`skill-bento-card ${group === "platform" ? "is-platform" : ""}`}
+      style={{ gridColumn: `span ${skill.span}` }}
+    >
+      <SkillIcon label={skill.icon} />
+      <div>
+        <h3>{skill.title}</h3>
+        <p>{skill.subtitle}</p>
+      </div>
+    </article>
+  );
+}
 
 const solutions = [
   {
@@ -91,17 +123,21 @@ function Home() {
                   <span></span>
                   <span></span>
                 </div>
-                <p className="panel-eyebrow">Stack preview</p>
-                <h2>Tecnologia elegida segun el proyecto.</h2>
-                <div className="stack-chip-grid">
-                  {stackItems.map((item) => (
-                    <span key={item} className="stack-chip">
-                      {item}
-                    </span>
+                <p className="panel-eyebrow">Skills preview</p>
+                <h2>Desarrollo, CMS y plataformas.</h2>
+                <div className="skill-bento-grid" aria-label="Skills de desarrollo">
+                  {developmentSkills.map((skill) => (
+                    <SkillCard key={skill.title} skill={skill} group="development" />
+                  ))}
+                </div>
+                <div className="skill-bento-separator" aria-hidden="true" />
+                <div className="skill-bento-grid" aria-label="Skills de CMS y plataformas">
+                  {platformSkills.map((skill) => (
+                    <SkillCard key={skill.title} skill={skill} group="platform" />
                   ))}
                 </div>
                 <p className="panel-caption">
-                  Sitios, paneles, integraciones y bases preparadas para crecer.
+                  Preview compacto del stack que usamos para sitios, tiendas y sistemas.
                 </p>
               </aside>
             </Col>
@@ -124,7 +160,7 @@ function Home() {
               </p>
               <div className="principle-grid">
                 <span>Claridad comercial</span>
-                <span>Diseño sobrio</span>
+                <span>Diseno sobrio</span>
                 <span>Base escalable</span>
                 <span>Performance</span>
               </div>
