@@ -1,5 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import myImg from "../../Assets/avatar.svg";
+import Tilt from "react-parallax-tilt";
 import { AiOutlineMail } from "react-icons/ai";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -36,14 +38,9 @@ function Home2() {
             </p>
           </Col>
           <Col md={4} className="myAvtar">
-            <div className="studio-proof-card">
-              <span className="proof-label">FOCO</span>
-              <h2>Webs claras, rapidas y pensadas para convertir.</h2>
-              <p>
-                Cada entrega combina diseno, arquitectura y desarrollo con una
-                base lista para crecer por fases.
-              </p>
-            </div>
+            <Tilt>
+              <img src={myImg} className="img-fluid" alt="MyCode avatar" />
+            </Tilt>
           </Col>
         </Row>
         <Row>

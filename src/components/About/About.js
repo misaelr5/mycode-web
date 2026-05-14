@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
 import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
+import laptopImg from "../../Assets/about.png";
 import Toolstack from "./Toolstack";
 
 function About() {
@@ -29,14 +30,7 @@ function About() {
             style={{ paddingTop: "120px", paddingBottom: "50px" }}
             className="about-img"
           >
-            <div className="architecture-card">
-              <span>ARQUITECTURA</span>
-              <h2>Stack elegido segun objetivo, alcance y etapa del cliente.</h2>
-              <p>
-                No forzamos una unica herramienta: definimos la base tecnica que
-                conviene construir hoy y escalar despues.
-              </p>
-            </div>
+            <img src={laptopImg} alt="enfoque MyCode" className="img-fluid" />
           </Col>
         </Row>
         <h1 className="project-heading">
